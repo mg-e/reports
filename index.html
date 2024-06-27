@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Report Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weekly Report Generator</h1>
+        <form id="reportForm">
+            <label for="projectName">Project Name:</label>
+            <input type="text" id="projectName" name="projectName" placeholder="Project Name" required><br><br>
+            
+            <label for="weekStartDate">Week Start Date (Monday):</label>
+            <input type="date" id="weekStartDate" name="weekStartDate" required><br><br>
+
+            <label for="weekEndDate">Week End Date (Friday):</label>
+            <input type="date" id="weekEndDate" name="weekEndDate" required><br><br>
+
+            <label for="upcomingUpdates">Upcoming Updates:</label>
+            <textarea id="upcomingUpdates" name="upcomingUpdates" rows="4" required></textarea><br><br>
+
+            <label for="workedOn">What's been worked on this week:</label>
+            <textarea id="workedOn" name="workedOn" rows="4" required></textarea><br><br>
+
+            <label for="pendingItems">Action/Pending items:</label>
+            <textarea id="pendingItems" name="pendingItems" rows="4" required></textarea><br><br>
+
+            <label for="needApproval">Need approval:</label>
+            <textarea id="needApproval" name="needApproval" rows="4" required></textarea><br><br>
+
+            <label for="delays">Delays:</label>
+            <textarea id="delays" name="delays" rows="4" required></textarea><br><br>
+
+            <button type="button" onclick="generateReport()">Generate Report</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+        </form>
+        <div id="reportOutput" class="report"></div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
