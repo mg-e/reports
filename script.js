@@ -29,7 +29,7 @@ function generateReport() {
         <p><strong>👩‍💻 What's been worked on this week:</strong><br>${workedOn}</p>
         <p><strong>⏳ Action/Pending items:</strong><br>${pendingItems}</p>
         <p><strong>✔️ Need approval:</strong><br>${needApproval}</p>
-        <p><strong>⏰ Delays:</strong><br>${needApproval}</p>
+        <p><strong>⏰ Delays:</strong><br>${delays}</p>
     `;
     reportOutput.style.display = 'block';
     document.getElementById('downloadPDF').style.display = 'block';
@@ -41,27 +41,3 @@ function clearForm() {
     document.getElementById('downloadPDF').style.display = 'none';
 }
 
-// async function downloadPDF() {
-//     const { jsPDF } = window.jspdf;
-//     const reportContent = document.getElementById('reportOutput');
-//     const doc = new jsPDF('p', 'pt', 'a4');
-
-//     try {
-//         const canvas = await html2canvas(reportContent, { scale: 1 });
-//         const imgData = canvas.toDataURL('image/png');
-//         const imgWidth = 210; // A4 size width in mm
-//         const imgHeight = (canvas.height * imgWidth) / canvas.width;
-//         doc.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-//         doc.save('weekly_report.pdf');
-//     } catch (error) {
-//         console.error('Error generating PDF:', error);
-//     }
-// }
-// function downloadPDF() {
-//     var pdf = new jsPDF('p', 'pt', 'a4');
-//     $("#button-pdf").attr('hidden', 'true')
-//     pdf.addHTML($("#mainContainer"), 0, -20, { allowTaint: true, useCORS: true, pagesplit: false }, function () {
-//     pdf.save('{{downloaded_file_name}}.pdf');
-//     $("#button-pdf").removeAttr('hidden', 'true')
-//   });
-// }
